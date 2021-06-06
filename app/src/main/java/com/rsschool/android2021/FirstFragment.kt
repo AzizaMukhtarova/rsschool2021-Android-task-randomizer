@@ -48,11 +48,11 @@ class FirstFragment : Fragment() {
                 return@setOnClickListener
             }
 
-            if (min.toInt() > max.toInt()) {
+            if (Integer.valueOf(min) > Integer.valueOf(max)) {
                 Toast.makeText(requireContext(), "Error", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            val secondFragment: Fragment = SecondFragment.newInstance(min.toInt(), max.toInt())
+            val secondFragment: Fragment = SecondFragment.newInstance(Integer.valueOf(min),Integer.valueOf(max))
             val transaction: FragmentTransaction = parentFragmentManager.beginTransaction()
             transaction.replace(R.id.container, secondFragment)
             transaction.commit()

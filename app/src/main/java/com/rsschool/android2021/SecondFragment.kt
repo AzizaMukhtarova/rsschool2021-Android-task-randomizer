@@ -35,7 +35,7 @@ class SecondFragment : Fragment() {
         result?.text = generate(min, max).toString()
 
         backButton?.setOnClickListener {
-            val firstFragment: Fragment = newInstance(result?.text.toString().toInt())
+            val firstFragment: Fragment = newInstance(Integer.valueOf(result?.text.toString()))
             val transaction: FragmentTransaction = parentFragmentManager.beginTransaction()
             transaction.replace(R.id.container, firstFragment)
             transaction.commit()
